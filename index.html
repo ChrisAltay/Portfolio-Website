@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChrisAltay.Dev Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+
+    <!--Navigation bar-->
+    <h1 class="NV">
+        <div class="logo" style="font-family:Georgia, 'Times New Roman', Times, serif;">Chris<sub style="font-family:Georgia, 'Times New Roman', Times, serif;">Altay</sub></div>
+
+        <label id="switch"> <!--Light Dark theme switch-->
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+
+        <span class="hamburger">&#9776;</span>  <!-- Hamburger Icon -->
+
+        
+        <nav class="navbar">  <!--Navigation bar-->
+            <a href="#about" class="nav-link1">About</a>
+            <a href="#skills"class="nav-link">Skills</a>
+            <a href="#projects"class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact me</a>
+        </nav> 
+
+    </h1>  
+
+    <!--Function for navbar drop down hamburger menu-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const navbar = document.querySelector('.navbar');
+    
+            hamburger.addEventListener('click', function () {
+                navbar.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!--Light/Dark theme user preference storage save-->
+    <script>
+    // Function to set the initial theme on page load based on user's previous preference
+    function initializeTheme() {
+        const themeswitch = document.querySelector('#switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+    
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeswitch.checked = true; // Ensure the switch reflects the current theme
+        }
+    
+        themeswitch.addEventListener('change', () => {
+            document.body.classList.toggle('dark-theme');
+            let theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    }
+    
+    // Call the function when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', initializeTheme);
+</script>
+
+    
+    <!--Music Sound display-->
+    <audio id="backgroundMusic"  loop src="song.mp3" muted></audio>
+    <button class="musicbutton" onclick="toggleSound()">&#9654</button>
+
+    <!--Function to play music-->
+    <script>
+        function toggleSound() {
+            var audioElem = document.getElementById('backgroundMusic');
+            audioElem.muted = !audioElem.muted;
+            audioElem.play();
+        }
+    </script>
+    
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1> <span id="hello-span">Hello</span> I'm Christopher Altagracia</h1>
+            
+            <p style="font-family:Georgia, 'Times New Roman', Times, serif;">
+                I'm a Front-End Web Developer based in Cranford, New Jersey <i class="fas fa-map-pin"></i>
+            </p>
+
+
+            <div class="buttons">
+                <a href="#contact" class="button">Let's Talk</a>  
+                <a href="#projects" class="button">My Projects</a>
+            </div>
+
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+            <div class="coding-languages">
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3"></i>
+                <i class="fab fa-js"></i>
+                <i class="fab fa-java"></i>
+                <i class="fab fa-php"></i>
+                <i class="fas fa-database"></i>
+            </div>
+        
+        </div>
+
+        <div class="image-container">
+            <img src="IMG_E0968.JPG" alt= "Picture of Chris" title="This is Me">
+        </div>
+
+    </section>
+    
+    <script>
+        const helloLanguages = ["Hello", "Hola", "مرحبًا", "Bonjour", "Ciao", "Konnichiwa", "Salve", "Namaste"];
+        let currentIndex = 0;
+      
+        function updateHello() {
+          document.querySelector("#hello-span").textContent = helloLanguages[currentIndex];
+          currentIndex = (currentIndex + 1) % helloLanguages.length;
+        }
+        // Update hello text every 2 seconds (2000 milliseconds)
+        setInterval(updateHello, 2000);
+      </script>
+
+<hr>
+
+<br>
+<!-- Content Sections -->
+<section id="about">
+    <div class="aboutsection">
+    <h1 class="AboutHeader">ABOUT ME</h1>
+    
+    <p>Hey, welcome to my online space! I'm Christopher Paredes Altagracia, a 26-year-old coding enthusiast from New Jersey, where I turn ideas into code with a dash of creativity.  My world's not all about coding, though.
+         I'm big on staying active, whether that's through exercise, boxing, or gaming. And nothing beats a drive in my Mustang, unless it's hanging out with my family or enjoying a great meal out. I'm currently advancing 
+         my education at Kean University, where I've moved on from achieving an Associate's degree to working towards my Bachelor's in Computer Science. With a strong passion for continuous learning and solving 
+         challenging problems, my academic journey is deeply fulfilling. Additionally, I take pride in my role as a Code Samurai tutor, where I support my peers in understanding programming concepts. Feel free to
+          explore my projects to witness my professional journey.</p>
+    </div>
+
+    <div class="ImageBox">
+        <img src="IMG_FRONT.PNG" class="car" alt="Picture of Chris's Mustang" title="My Car"> 
+        <p>I love american cars! This is my mustang which I enjoy driving.</p>
+        <img src="SETUP.JPG" class="desk" alt="Picture of Chris's Setup" title="My Setup">
+        <p class="P2">This is my current setup where all the programming magic happens.</p>
+    </div>
+</section>
+
+<section id="skills">
+    
+    <h1 class="SkillsHeader">Skills</h1>
+<br>
+<br>
+<br>
+<br>
+    <div class="Skills">
+    <p class="TSkills">Technical Skills <span class="words"> <br><br>  - HTML <br> - CSS <br> - SQL <br> - JavaScript <br> - Java <br> - Database <br> - Linux <br> - PHP <br> - Git </span> </p>
+    <p class="SSkills">Soft Skills <span class="WORDS"> <br><br>  - Project Management <br> - Time Management <br> - Problem Solving <br> - Leadership <br> - Adaptability <br> - Creativity <br> - Communication <br> - English/Spanish Proficiency </span> </p>
+    </div>
+</section>
+
+
+
+<section id="projects">
+
+    <h1 class="ProjectsHeader">Projects</h1>
+
+    <div class="PandI">
+    <p class="ProjP1">Each project is a unique blend of skillful development and inventive design.</p>
+    <iframe src="https://chrisaltay.netlify.app" scrolling="no"></iframe> 
+    </div>
+
+    <div class="portfolio_section">
+    <h1 class="Portfolio">Portfolio</h1>
+    <p class="ProjP2">
+        Explore my portfolio to see a showcase of my skills in web development, featuring handpicked projects that highlight my expertise in crafting user-centric designs and innovative solutions. 
+        This website is responsive and provides an interactive interface to demonstrate my technical proficiency and creativity, offering visitors a firsthand experience of my professional journey in technology.</p>
+        <br>
+        <br>
+        <p class="ProjP3">HTML&nbsp;&nbsp;&nbsp;&nbsp;CSS&nbsp;&nbsp;&nbsp;&nbsp;JAVASCRIPT</p>
+
+        <br>
+        <br>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+        <a href="" target="_blank" class="icon1">
+            <i class="fab fa-github">Code</i>
+        </a>
+
+        <a href="https://chrisaltay.netlify.app" target="_blank" class="icon">
+            <i class="fas fa-download">Live Demo</i>
+        </a>
+    </div>
+</section>
+
+
+
+<section id="contact">
+ 
+    <div class="ContactLeft">
+    <h1>Contact me</h1>
+    <p>Let's turn ideas into digital realities together! Feel free to send me an email and I'll reply as soon as possible. </p>
+    
+    <form id="contact-form"> 
+       <h3>Fill fields below</h3>
+       <input type="text" id="sendername" name="sendername" placeholder="Name"> <br>
+       <input type="text" id="number" name="number" placeholder="Number"> <br>
+       <input type="text" id="subject" name="subject" placeholder="Subject"> <br>
+       <input type="text" id="replyto" name="replyto" placeholder="Your Email"> <br>
+       <textarea id="message" name="message" cols="40" rows="8" placeholder="Message"></textarea> <br>
+       <button type="button" onclick="sendMail();">Send</button>
+    </form>
+    </div>
+
+
+
+    <script>
+        function sendMail() {
+            emailjs.init("");
+        
+            var params = {
+                sendername: document.getElementById("sendername").value,
+                number: document.getElementById("number").value,
+                subject: document.getElementById("subject").value,
+                replyto: document.getElementById("replyto").value,
+                message: document.getElementById("message").value,
+            };
+    
+            var serviceID = "";
+            var templateID = "";
+    
+            emailjs.send(serviceID, templateID, params)
+                .then(function(response) {
+                    alert("Email Sent Successfully!");
+                }, function(error) {
+                    alert("Failed to send email. Error: " + JSON.stringify(error));
+                });
+        }
+    </script>
+
+   
+    
+<div class="ContactRight">
+<h3>Info</h3>
+
+<img src="IMG_E0968.JPG" class="SecondImage" alt="Picture of Chris" title="This is me">
+
+<div class="ContactInfo">
+<p class="PhoneNumber">Phone number: (908) 848-3218</p>
+<p class="Email">Buisness Email: chris.altay@gmail.com </p>
+</div>
+
+</div>
+
+</section>
+
+</body>
+
+<footer>
+    <p>&copy; 2024 Christopher Altagracia. All rights reserved.</p>
+
+    <div class="footerlinks">
+    <a href="Terms.html">Terms of use</a>
+    <a href="Privacy.html">Privacy Policy</a>
+    </div>
+</footer>
+
+</html>
+
